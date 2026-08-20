@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #28352f;
+  background: #e9e2d3;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-height: 100%; width: 100%; }
+body { overflow-x: hidden; }
+
+main {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,.65), transparent 35%),
+    #e9e2d3;
+}
+
+.topbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 34px;
+  mix-blend-mode: multiply;
+}
+
+.brand {
+  font-size: 11px;
+  letter-spacing: .22em;
+  font-weight: 600;
+}
+.brand span { margin: 0 8px; }
+
+nav { display: flex; gap: 8px; }
+nav button {
+  border: 1px solid rgba(40,53,47,.28);
+  background: rgba(255,255,255,.16);
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: #28352f;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+}
+nav button.active, nav button:hover {
+  background: #28352f;
+  color: #f6f0e4;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 39% 61%;
+  position: relative;
+}
+
+.copy {
+  align-self: center;
+  padding: 110px 30px 80px 7vw;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: .22em;
+  font-weight: 600;
+  margin-bottom: 22px;
+  opacity: .7;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(60px, 6.3vw, 104px);
+  line-height: .82;
+  font-weight: 500;
+  letter-spacing: -.045em;
+  margin: 0 0 32px;
+}
+h1 em { font-weight: 400; }
+
+.lede {
+  max-width: 380px;
+  line-height: 1.7;
+  font-size: 14px;
+  color: rgba(40,53,47,.72);
+}
+
+.hint {
+  display: inline-block;
+  margin-top: 25px;
+  border-top: 1px solid rgba(40,53,47,.28);
+  padding-top: 10px;
+  font-size: 10px;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+.canvas-wrap {
+  min-height: 100vh;
+  position: relative;
+}
+
+.canvas-wrap canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.footer {
+  position: fixed;
+  z-index: 10;
+  bottom: 18px;
+  left: 34px;
+  right: 34px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: .13em;
+  opacity: .55;
+  pointer-events: none;
+}
+
+.bell-label, .mountain-label {
+  font-size: 9px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #39483f;
+  white-space: nowrap;
+  background: rgba(245,240,229,.78);
+  padding: 6px 9px;
+  border-radius: 99px;
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 800px) {
+  .topbar { padding: 16px; }
+  .brand { font-size: 9px; }
+  nav button { padding: 7px 10px; font-size: 9px; }
+
+  .hero { display: block; min-height: 100svh; }
+  .copy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 90px 22px 0;
+    pointer-events: none;
+  }
+  h1 { font-size: clamp(54px, 16vw, 82px); max-width: 550px; }
+  .lede { max-width: 320px; font-size: 12px; }
+  .canvas-wrap { min-height: 100svh; }
+  .footer { left: 16px; right: 16px; bottom: 12px; font-size: 7px; }
+}
